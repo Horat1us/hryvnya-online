@@ -1,0 +1,94 @@
+@import "styles.scss";
+
+header {
+  color: #f1f1f1;
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  > * {
+    flex: 0;
+  }
+
+  .logo {
+    display: block;
+    height: 3.4em;
+    margin-right: .2em;
+    pointer-events: none;
+    animation: logo-spin infinite 20s linear;
+    align-self: flex-end;
+    flex-basis: 4em;
+  }
+
+  //noinspection CssInvalidPropertyValue
+  .brand {
+    background: linear-gradient(.1turn, $color-secondary 0%, $color-primary 20%, $color-primary 20%);
+    background-size: 200% auto;
+    color: transparent;
+    font-weight: normal;
+    font-size: 2.8em;
+    background-clip: text;
+    animation: bg-shine 3s linear infinite;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  .slogan {
+    flex: 1 50%;
+    margin: 0;
+    color: $color-primary;
+    font-weight: lighter;
+    align-self: flex-end;
+  }
+
+  .dt {
+
+    flex: 1 50%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    opacity: .5;
+  }
+
+  @include match('small') {
+    .dt {
+      order: 9;
+      margin-left: auto;
+      color: #ffffff;
+      flex-flow: column wrap;
+      align-items: flex-end;
+    }
+
+    .slogan {
+      order: 10;
+    }
+  }
+}
+
+
+@keyframes bg-shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes logo-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

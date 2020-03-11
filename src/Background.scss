@@ -1,0 +1,22 @@
+.background {
+  $blur: 4px;
+  $size: calc(100% + #{$blur} * 4);
+
+  position: fixed;
+  top: -$blur * 2;
+  left: -$blur * 2;
+  min-width: $size;
+  min-height: $size;
+
+  &_error {
+    filter: blur($blur) sepia(1);
+  }
+
+  &_loading {
+    filter: blur($blur) grayscale(1);
+  }
+
+  &_ready {
+    filter: blur($blur) brightness(.7);
+  }
+}

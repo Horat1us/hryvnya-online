@@ -1,0 +1,50 @@
+@import "../styles.scss";
+
+.exchange-article {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  > * {
+    flex: 0;
+  }
+
+  &__title, &__rate {
+    font-size: 2.8em;
+    margin: 0;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    flex: 0 auto;
+
+    &:not(:last-child) {
+      margin-right: .5em;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    color: $color-primary;
+
+    @include not-match("small") {
+      flex: 1 100%;
+    }
+  }
+
+  &__rate {
+    font-weight: normal;
+
+    @include not-match("small") {
+
+      flex: 0;
+
+      .icon-rate {
+
+        display: none;
+      }
+    }
+
+    .rate-item {
+      display: inline-block;
+    }
+  }
+}
