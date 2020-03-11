@@ -23,7 +23,7 @@
 
   &__title {
     font-weight: bold;
-    color: $color-primary;
+    color: #ffffff;
 
     @include not-match("small") {
       flex: 1 100%;

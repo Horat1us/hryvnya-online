@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 130">
+    <defs>
+        <linearGradient id="g1" gradientTransform="rotate(90)">
+            <stop offset="0%" stop-color="#f7c73f" />
+            <stop offset="50%" stop-color="#057389" />
+            <stop offset="100%" stop-color="#f7c73f" />
+        </linearGradient>
+    </defs>
+	<circle cx="50%" cy="50%" r="45%" stroke-width="5" stroke="url(#g1)" fill="transparent" />
+    <g transform="translate(15 15)">
+        <line x1="20" y1="40" x2="80" y2="40" stroke-linecap="round" stroke="#f7c73f" stroke-width="10" />
+        <path d="M 30 10 C 80 -10, 80 40, 50 50 C 10 70, 40 110, 70 90"
+              fill="transparent"
+              stroke-linecap="round"
+			  stroke="url(#g1)"
+              stroke-width="10"
+        />
+        <line x1="20" y1="60" x2="80" y2="60" stroke-linecap="round" stroke="#f7c73f" stroke-width="10" />
+    </g>
+</svg>
