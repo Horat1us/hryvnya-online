@@ -3,12 +3,13 @@ import { Rate, RateType, RateTypes } from "./Rate";
 import { IconRate } from "./IconRate";
 import "./Article.scss";
 import { RateItem } from "./RateItem";
+import { HistoryChart } from "./HistoryChart";
 
 const CurrentRateItem: React.FC<{ type: RateType, rate: Rate }> = ({ type, rate }) => {
-    const value = rate[ type ];
+    const value = rate.history[0][type];
     return <div className="exchange-article__rate" aria-label={type} aria-valuenow={value}>
         <IconRate type={type}/>
-        <RateItem value={rate[ type ]}/>
+        <RateItem value={value}/>
     </div>
 };
 
@@ -19,6 +20,9 @@ export const Article: React.FC<{ rate: Rate }> = ({ rate }) => {
                 {rate.currency}
             </h3>
             {RateTypes.map((type) => <CurrentRateItem key={type} type={type} rate={rate}/>)}
+            {rate.history.length > 1 && (
+                <HistoryChart items={rate.history} className="exchange-article__chart" preserveAspectRatio="xMinYMid meet"/>
+            )}
         </article>
     )
 };

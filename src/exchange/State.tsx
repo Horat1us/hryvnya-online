@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { PrivatBank } from "./PrivatBank";
+import * as PrivatBank from "./PrivatBank";
 import { RateArray } from "./Rate";
 
 export type State = RateArray | Error | undefined;
@@ -10,7 +10,7 @@ export const useState = (): State => {
         if (state !== undefined) {
             return;
         }
-        PrivatBank().then(setState, setState);
+        PrivatBank.getRate().then(setState, setState);
     }, [state]);
     return state;
 };
